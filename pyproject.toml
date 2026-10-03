@@ -1,0 +1,26 @@
+[project]
+name = "stickerme"
+version = "0.1.0"
+description = "Local personalized cartoon sticker pack creator"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+    "sqlalchemy>=2.0,<3",
+    "python-multipart>=0.0.20,<1",
+    "pillow>=11,<13",
+    "rembg[cpu]>=2.0.67,<3",
+    "regex>=2025.0.0",
+    "psutil>=7,<8",
+    "httpx>=0.28,<1",
+    "numpy>=2,<3",
+    "scipy>=1.15,<2",
+    "opencv-python-headless>=4.10,<5",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
