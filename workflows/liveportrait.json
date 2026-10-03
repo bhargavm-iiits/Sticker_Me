@@ -1,0 +1,33 @@
+{
+  "license": "MIT (KlingAIResearch/LivePortrait). InsightFace detection models are intentionally not used; YuNet replaces them.",
+  "code": {
+    "repository": "KlingAIResearch/LivePortrait",
+    "revision": "9b294b3d0536135442ea73cb01e6cb3ca7029dd3",
+    "files": [
+      "LICENSE",
+      "src/config/models.yaml",
+      "src/modules/__init__.py",
+      "src/modules/appearance_feature_extractor.py",
+      "src/modules/convnextv2.py",
+      "src/modules/dense_motion.py",
+      "src/modules/motion_extractor.py",
+      "src/modules/spade_generator.py",
+      "src/modules/stitching_retargeting_network.py",
+      "src/modules/util.py",
+      "src/modules/warping_network.py",
+      "src/utils/camera.py",
+      "src/utils/resources/mask_template.png"
+    ]
+  },
+  "weights": {
+    "repository": "KlingTeam/LivePortrait",
+    "revision": "82a4fa6735ca58432b6ce39301b4b9ee066dea47",
+    "files": [
+      {"file": "liveportrait/base_models/appearance_feature_extractor.pth", "sha256": "5279bb8654293dbdf327030b397f107237dd9212fb11dd75b83dfb635211ceb5"},
+      {"file": "liveportrait/base_models/motion_extractor.pth", "sha256": "251e6a94ad667a1d0c69526d292677165110ef7f0cf0f6d199f0e414e8aa0ca5"},
+      {"file": "liveportrait/base_models/spade_generator.pth", "sha256": "4780afc7909a9f84e24c01d73b31a555ef651521a1fe3b2429bd04534d992aee"},
+      {"file": "liveportrait/base_models/warping_module.pth", "sha256": "2f61a6f265fe344f14132364859a78bdbbc2068577170693da57fb96d636e282"},
+      {"file": "liveportrait/retargeting_models/stitching_retargeting_module.pth", "sha256": "3652d5a3f95099141a56986aaddec92fadf0a73c87a20fac9a2c07c32b28b611"}
+    ]
+  }
+}
