@@ -1,0 +1,26 @@
+[
+  {
+    "repository": "unsloth/FLUX.2-klein-4B-GGUF",
+    "revision": "0084d1df98e2e2137fe776d55170bc4792ec1d66",
+    "file": "flux-2-klein-4b-Q6_K.gguf",
+    "sha256": "fb3b5430d9229f982616c7db084deff1db5035d0cb6558f2d4f704cfe5e609e2",
+    "bytes": 3409273408,
+    "license": "Apache-2.0"
+  },
+  {
+    "repository": "Qwen/Qwen3-4B-GGUF",
+    "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+    "file": "Qwen3-4B-Q4_K_M.gguf",
+    "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "bytes": 2497280256,
+    "license": "Apache-2.0"
+  },
+  {
+    "repository": "Comfy-Org/vae-text-encorder-for-flux-klein-4b",
+    "revision": "5f526678002e43af5551dadb73ce2e8c91b43afe",
+    "file": "split_files/vae/flux2-vae.safetensors",
+    "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+    "bytes": 336211292,
+    "license": "Apache-2.0"
+  }
+]

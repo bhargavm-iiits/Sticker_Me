@@ -1,0 +1,23 @@
+{
+  "face": [
+    "4",
+    "image"
+  ],
+  "body": [
+    "17",
+    "image"
+  ],
+  "prompt": [
+    "6",
+    "text"
+  ],
+  "seed": [
+    "10",
+    "noise_seed"
+  ],
+  "output": "16",
+  "prefix": [
+    "16",
+    "filename_prefix"
+  ]
+}
