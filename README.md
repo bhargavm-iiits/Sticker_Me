@@ -2,7 +2,7 @@
 
 Documented: **4 October 2026**. Project: `D:\Additional Project\Img_2_Sticker`.
 
-Free cloud demo: **https://stickerme-free.vercel.app**. This demo uses the official
+Free cloud demo: **[https://stickerme-free.vercel.app/](https://stickerme-free.vercel.app/)**. This demo uses the official
 public Hugging Face Klein Space for generation and keeps packs in browser storage.
 GPU queues and quotas apply. See [free cloud deployment](Docs/free-cloud-deployment.md)
 for its features, limits and build settings. The architecture below describes the
