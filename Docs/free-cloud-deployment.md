@@ -57,6 +57,9 @@ as the build command, and `dist` as the output directory. Set `VITE_FREE_CLOUD=t
 for production and preview builds. Environment changes require a new deployment.
 The frontend `vercel.json` configures SPA routing.
 
+The `stickerme-free` Vercel project tracks `codex/free-cloud` as its production
+branch. Pushing changes to that branch automatically updates the live site.
+
 No private portraits, existing local pack files, Python environment or model
 weights are uploaded to Vercel.
 
