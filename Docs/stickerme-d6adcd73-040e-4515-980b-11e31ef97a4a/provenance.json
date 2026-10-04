@@ -1,0 +1,2909 @@
+[
+  {
+    "sticker_id": "9dd9685f-968d-4afe-bf5a-b005e31e7d7e",
+    "prompt_id": "b42d7eb9-584c-44e7-a715-1619b48f05b7",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to cheerful smile. Change the pose to raising one open hand and waving hello. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1520507209
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/5b7baa1d-007f-4ff6-917d-320ab565ae02"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "9dd9685f-968d-4afe-bf5a-b005e31e7d7e",
+    "prompt_id": "85d75bb5-02d7-4d87-b575-63800615d4b9",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to cheerful smile. Change the pose to raising one open hand and waving hello. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 792702452
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/ee828cc0-2ef7-4bfb-8575-73ec20ba3e78"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "e1e969ed-9951-4f7a-816b-e90853976e07",
+    "prompt_id": "3dbdf7e8-1320-438b-bc62-4ee35b30fe79",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to confident happy grin. Change the pose to giving a clear thumbs up with one hand. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1682670365
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/9ecad008-6db5-4569-b889-4931656eeff3"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "e1e969ed-9951-4f7a-816b-e90853976e07",
+    "prompt_id": "e920a60f-1472-46b4-8127-3cd64410da7b",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to confident happy grin. Change the pose to giving a clear thumbs up with one hand. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1109839983
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/3ea24f52-bcb4-4175-98d9-eda614b7865b"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "09f9bc47-80e3-4447-b690-07c08cbe22c3",
+    "prompt_id": "b08fa897-73e7-4eca-93fc-db35f4822a3e",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to firm disapproving frown. Change the pose to crossing both forearms in an X in front of the chest. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 976316510
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/ae4ddd2e-5e58-488f-86ae-019a898a1ffc"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "09f9bc47-80e3-4447-b690-07c08cbe22c3",
+    "prompt_id": "f0d8986c-3aee-4f93-9155-f8914220deea",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to firm disapproving frown. Change the pose to crossing both forearms in an X in front of the chest. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1888536208
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/14aaad4a-268e-4bab-bbc6-3a6af597075a"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "4b58aed5-34b5-43ff-aba2-09c85fc2cc59",
+    "prompt_id": "5c19d1d0-13bd-4d9a-a202-25583a5df699",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to laughing with eyes squeezed shut and a wide open mouth. Change the pose to one hand on the belly and the other wiping a tear of laughter. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 390102792
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/5755762f-29eb-4bb4-b4e6-f94e4920d5b8"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "ab1715ac-5599-44ca-b644-c713d938a814",
+    "prompt_id": "a6598583-f6a9-45ab-a6ac-bc83a2df7c45",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to wide eyes and mouth open in surprise. Change the pose to both open hands raised beside the cheeks. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1738160429
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/4d3dbe58-803b-423a-90e4-0c8f94962a82"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "0897c427-8a2b-478f-a758-7ea4e99bc6ef",
+    "prompt_id": "54f9c728-eabf-483b-a004-b5dc9cc43910",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to grateful gentle smile. Change the pose to pressing both palms together in front of the chest. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 495691621
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/9ba3cc82-c759-4e94-a07d-96da11e42283"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "a1120b3d-2e7c-4a72-a3ba-9f05225edc74",
+    "prompt_id": "16c76447-cc5f-4e85-a4c6-6269b9b0c820",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to remorseful downcast eyes. Change the pose to head slightly bowed and one hand over the heart. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 181667565
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/3918bf96-ead5-458e-91b5-7364f1899498"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "77555ca8-6b22-4394-b327-a818b646713c",
+    "prompt_id": "8536e14a-f4e2-4255-ac7f-e39696f83558",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to warm affectionate smile. Change the pose to forming a heart shape with both hands in front of the chest. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1748548899
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/6821f1fd-8913-4be1-ad04-7395f960fd40"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "77555ca8-6b22-4394-b327-a818b646713c",
+    "prompt_id": "bfa869f0-ceab-4223-aa92-f4afa2440bb3",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to warm affectionate smile. Change the pose to forming a heart shape with both hands in front of the chest. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1087207517
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/0d80ff6d-a5a7-4476-80ee-fc31133cf54d"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "77555ca8-6b22-4394-b327-a818b646713c",
+    "prompt_id": "d9a7383b-195c-46c9-9bb4-5ab111faf00b",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to warm affectionate smile. Change the pose to forming a heart shape with both hands in front of the chest. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 168149999
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/ba60c45a-6204-4469-8b06-8d4c2b4c7b03"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "c488e646-97b9-4aab-ac3f-745ffe72bb7b",
+    "prompt_id": "8972f263-2098-4e1c-86d6-9690eeb7fd00",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to impatient raised eyebrow. Change the pose to looking at a wristwatch and pointing to it with the other hand. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1758666002
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/e5d70fbc-7123-49d1-ba8f-53e47affad03"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "76b5973c-39e1-4ed3-8e33-3f4eea499750",
+    "prompt_id": "bacda057-14ef-4e4b-a127-c56a150eb28c",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to focused slightly stressed expression. Change the pose to typing on a small laptop held at chest level. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 774037184
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/bbe7a43e-2c85-4d87-8b71-127c4848305c"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "251fb07d-0503-470f-846f-47c728c86910",
+    "prompt_id": "9fd90cbd-0446-4c60-bea2-3163c332592e",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to sleepy closed eyes and a soft smile. Change the pose to resting the cheek on both hands pressed together like a pillow. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 232186277
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/e3de66b4-8fa6-416d-b38a-d26271af4567"
+        }
+      }
+    }
+  },
+  {
+    "sticker_id": "8e10c788-f1ff-4bd3-b10c-15a830530078",
+    "prompt_id": "1da0a079-c492-47d3-ac7b-690af38484db",
+    "reference_hash": "612896a7610a2e298e0f34d7a7224f2830a7190ff254eddc2fedcd88a995c787",
+    "workflow": {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "StickerMe/d6adcd73-040e-4515-980b-11e31ef97a4a.png"
+        }
+      },
+      "5": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "Transform the person in the reference photo into one illustrated cartoon sticker. Faithfully preserve this specific person's face shape, facial features, hairstyle, skin tone and clothing colors. Keep the person's apparent age, gender and existing accessories exactly as shown in the reference. Do not invent new accessories or replace this person with a generic cartoon avatar. Style: clean 2D cartoon illustration, bold smooth outlines, simple flat colors, expressive face, sticker art. Mood: playful and energetic, expressive but friendly. Change the facial expression to joyful beaming smile. Change the pose to raising both fists in celebration with a few confetti pieces. Redraw the body and hands in this new pose; keep the same person. Show head, shoulders, upper torso and all requested hands completely with generous empty padding. One person only, anatomically plausible hands, plain solid white background. No text, captions, letters, logos, panels or duplicate people."
+        }
+      },
+      "7": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "6",
+            0
+          ],
+          "latent": [
+            "5",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1139753957
+        }
+      },
+      "11": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "12": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "8",
+            0
+          ],
+          "cfg": 1
+        }
+      },
+      "14": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "12",
+            0
+          ],
+          "sigmas": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "16": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ],
+          "filename_prefix": "StickerMe/29cbcc8d-583b-4ecb-8c76-b1eb8378d458"
+        }
+      }
+    }
+  }
+]

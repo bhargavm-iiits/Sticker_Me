@@ -1,0 +1,106 @@
+{
+  "name": "My stickers",
+  "mode": "cartoon",
+  "language": "en",
+  "style": "cartoon",
+  "tone": "playful",
+  "engine": "FLUX.2 Klein 4B Q4_K_M",
+  "stickers": [
+    {
+      "number": 1,
+      "intent": "greeting",
+      "emoji": "👋",
+      "caption": "Hi!",
+      "seed": 792702452,
+      "revision": 2
+    },
+    {
+      "number": 2,
+      "intent": "agreement",
+      "emoji": "👍",
+      "caption": "Yes!",
+      "seed": 1109839983,
+      "revision": 2
+    },
+    {
+      "number": 3,
+      "intent": "refusal",
+      "emoji": "🙅",
+      "caption": "Nope",
+      "seed": 1888536208,
+      "revision": 3
+    },
+    {
+      "number": 4,
+      "intent": "laughter",
+      "emoji": "😂",
+      "caption": "LOL",
+      "seed": 390102792,
+      "revision": 1
+    },
+    {
+      "number": 5,
+      "intent": "surprise",
+      "emoji": "😮",
+      "caption": "OMG!",
+      "seed": 1738160429,
+      "revision": 1
+    },
+    {
+      "number": 6,
+      "intent": "thanks",
+      "emoji": "🙏",
+      "caption": "Thanks!",
+      "seed": 495691621,
+      "revision": 1
+    },
+    {
+      "number": 7,
+      "intent": "apology",
+      "emoji": "😔",
+      "caption": "Sorry",
+      "seed": 181667565,
+      "revision": 1
+    },
+    {
+      "number": 8,
+      "intent": "affection",
+      "emoji": "❤️",
+      "caption": "Miss you",
+      "seed": 168149999,
+      "revision": 3
+    },
+    {
+      "number": 9,
+      "intent": "waiting",
+      "emoji": "⏳",
+      "caption": "Wait...",
+      "seed": 1758666002,
+      "revision": 1
+    },
+    {
+      "number": 10,
+      "intent": "busy",
+      "emoji": "💼",
+      "caption": "Busy!",
+      "seed": 774037184,
+      "revision": 1
+    },
+    {
+      "number": 11,
+      "intent": "goodnight",
+      "emoji": "🌙",
+      "caption": "Good night",
+      "seed": 232186277,
+      "revision": 1
+    },
+    {
+      "number": 12,
+      "intent": "congrats",
+      "emoji": "🎉",
+      "caption": "Congrats!",
+      "seed": 1139753957,
+      "revision": 1
+    }
+  ]
+}
