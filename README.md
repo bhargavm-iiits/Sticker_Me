@@ -2,6 +2,12 @@
 
 Documented: **4 October 2026**. Project: `D:\Additional Project\Img_2_Sticker`.
 
+Free cloud demo: **https://stickerme-free.vercel.app**. This demo uses the official
+public Hugging Face Klein Space for generation and keeps packs in browser storage.
+GPU queues and quotas apply. See [free cloud deployment](Docs/free-cloud-deployment.md)
+for its features, limits and build settings. The architecture below describes the
+full local application.
+
 This document describes the implemented application, its generation pipelines, the fixes applied after visual review, and the steps to install, operate, validate and extend it. The implementation uses local inference with **FLUX.2 Klein 4B Q6_K**. It does not train or fine-tune a model. Training proposals remain in [Docs/plan2.md](Docs/plan2.md), and the training comparison remains in [Docs/plan3.md](Docs/plan3.md).
 
 The current defaults in the source code take precedence over older build notes. In particular, automatic photographic face animation is now disabled, PNG downloads do not require quality approval, and flagged stickers can be explicitly accepted by the person reviewing them.

@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && vite build",
+    "test:cloud": "node --test tests/cloudSticker.test.ts",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
+    "@gradio/client": "^2.7.1",
+    "fflate": "^0.8.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

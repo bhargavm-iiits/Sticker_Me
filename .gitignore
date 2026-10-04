@@ -10,3 +10,7 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .env
+frontend/.env*
+!frontend/.env.example
+.vercel/
+frontend/.vercel/
